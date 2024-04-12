@@ -1,0 +1,1102 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:j.0="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#"
+    xmlns:system="http://www.theworldavatar.com/ontology/ontocape/upper_level/system.owl#"
+    xmlns:mereology="http://www.theworldavatar.com/ontology/meta_model/mereology/mereology.owl#"
+    xmlns="http://www.theworldavatar.com/ontology/ontopowsys/OntoPowSys.owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:PowSysBehavior="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#"
+    xmlns:tensor_quantity="http://www.theworldavatar.com/ontology/ontocape/upper_level/tensor_quantity.owl#"
+    xmlns:geometry="http://www.theworldavatar.com/ontology/ontocape/supporting_concepts/geometry/geometry.owl#"
+    xmlns:terms="http://purl.org/dc/terms/"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:technical_system="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#"
+    xmlns:mathematical_model="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+  xml:base="http://www.theworldavatar.com/ontology/ontopowsys/OntoPowSys.owl">
+  <owl:Ontology rdf:about="">
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontocape/supporting_concepts/SI_unit/SI_unit.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/system.owl"/>
+    <owl:imports rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl"/>
+  </owl:Ontology>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePowerBalance"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerFlow"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerConversion"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerEquipmentConnection"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerGeneration"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputPowerFactor"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputReactivePower"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerSystem"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputPowerFactor"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#EnergyStorageSystem">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactor"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#PowerFactor"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerGenerated"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedReactivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasEfficiency"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Efficiency"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasStateOfCharge"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#StateOfCharge"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasOutput"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActualVoltage"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrent"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerGenerated"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedActivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerConsumption"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerGeneration"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#AbsorbedReactivePower"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl#EnergyPrice"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerLoad">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasInput"/>
+        </owl:onProperty>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerConsumption"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerAbsorbed"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#AbsorbedActivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActualVoltage"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrent"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactor"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#PowerFactor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerAbsorbed"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#AbsorbedReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl#EconomicPerformance">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#representsPerformanceOf"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerSystem"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#VoltageRegulator">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasOutput"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#VoltageRegulation"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerGenerated"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#ElectricalLine">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputActivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputReactivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasVoltageInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactor"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#PowerFactor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerLoss"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ReactivePowerLosses"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasInput"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputActivePower"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerLoss"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePowerLosses"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasOutput"/>
+        <owl:someValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+        </owl:someValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrent"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasVoltageOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerFlow"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PowerSystemModel">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/system.owl#models"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerSystem"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputFrequency"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerEquipmentConnection"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActualVoltage"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerInjection"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePowerBalance"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ReactivePowerBalance"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputFrequency"/>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#EnergyMeter">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/system.owl#isConnectedTo"/>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:unionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#ElectricalLine"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#EnergyStorageSystem"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerGenerator"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerLoad"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#VoltageRegulator"/>
+            </owl:unionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#EnergyMetering"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#observes"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class>
+            <owl:intersectionOf rdf:parseType="Collection">
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#CumulatedEnergy"/>
+              <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl#EnergyPrice"/>
+            </owl:intersectionOf>
+          </owl:Class>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerGenerator">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerGenerated"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasOutput"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Frequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerGenerated"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactor"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#PowerFactor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrent"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActualVoltage"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasEfficiency"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Efficiency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerGeneration"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#Switch">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/meta_model/topology/topology.owl#isConnectedTo"/>
+        </owl:onProperty>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#ElectricalLine"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerFlow"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasBreakerStatus"/>
+        </owl:onProperty>
+        <owl:allValuesFrom>
+          <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#BreakerStatus"/>
+        </owl:allValuesFrom>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:Class rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PowerConverter">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrentOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasOutput"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequencyInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputFrequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerInput"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/technical_system.owl#realizes"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysFunction.owl#PowerConversion"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/network_system.owl#hasInput"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BusNode"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasFrequencyOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputFrequency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactorOutput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputPowerFactor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasReactivePowerOutput"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasPowerFactorInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#InputPowerFactor"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasVoltageInput"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty>
+          <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasCurrentInput"/>
+        </owl:onProperty>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Current"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerOutput"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#OutputActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasVoltageOutput"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#Voltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </owl:Class>
+  <owl:ObjectProperty rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#hasActivePowerInput">
+    <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:ID="isComprisedOf">
+    <rdfs:subPropertyOf rdf:resource="http://www.theworldavatar.com/ontology/meta_model/mereology/mereology.owl#isComposedOf"/>
+  </owl:ObjectProperty>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:ID="v1"/>
+      <owl:NamedIndividual rdf:ID="v2"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <owl:NamedIndividual rdf:ID="vr1">
+    <technical_system:realizes rdf:resource="#v1"/>
+    <rdf:type rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#VoltageRegulator"/>
+  </owl:NamedIndividual>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Samplingt">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#SamplingTime"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMaxDesigned">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#QMin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PLoss">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePowerLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PanelA">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PanelArea"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#DLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#DustLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#HLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#HumidityLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMaxBattery">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#VmMax">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumVoltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#SLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#ShadingLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#StartCost">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl#StartupCosts"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:ID="v3"/>
+      <owl:NamedIndividual rdf:ID="v4"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#VmMin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumVoltage"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Vg">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#VoltageMagnitude"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#StopCost">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysPerformance.owl#ShutdownCosts"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#SoCMax">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumStateOfCharge"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#DCCableLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#CablingLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontocape/upper_level/coordinate_system.owl#CoordinateSystem">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/coordinate_system.owl#hasAxis"/>
+        <owl:allValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontocape/upper_level/coordinate_system.owl#CoordinateSystemAxis"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#AngleMin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumVoltageAngle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PdBus">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#GdGen">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#SoC">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#StateOfCharge"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:about="#v1"/>
+      <owl:NamedIndividual rdf:about="#v3"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PanelW">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PanelWidth"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <system:System rdf:ID="System_001">
+    <rdfs:label>System 001</rdfs:label>
+    <mereology:isComposedOf>
+      <j.0:PowerConverter rdf:ID="PowerConverter_001">
+        <rdfs:label>Power converter 001</rdfs:label>
+        <mereology:isComposedOf>
+          <j.0:PowerTransformer rdf:ID="PowerTransformer_001">
+            <rdfs:label>Power transformer 001</rdfs:label>
+            <j.0:hasRatedFrequency>
+              <j.0:RatedFrequency rdf:ID="RatedFrequency_001">
+                <rdfs:label>Rated frequency 001</rdfs:label>
+                <system:hasValue>
+                  <system:ScalarValue rdf:ID="V_RatedFrequency_001">
+                    <rdfs:label>V Rated frequency 001</rdfs:label>
+                    <system:numericalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >50</system:numericalValue>
+                  </system:ScalarValue>
+                </system:hasValue>
+              </j.0:RatedFrequency>
+            </j.0:hasRatedFrequency>
+            <PowSysBehavior:hasFrequency>
+              <PowSysBehavior:Frequency rdf:ID="Frequency_001">
+                <rdfs:label>Frequency 001</rdfs:label>
+                <system:hasValue>
+                  <system:ScalarValue rdf:ID="V_Frequency_001">
+                    <rdfs:label>V Frequency 001</rdfs:label>
+                    <system:numericalValue rdf:datatype="http://www.w3.org/2001/XMLSchema#double"
+                    >50.5</system:numericalValue>
+                  </system:ScalarValue>
+                </system:hasValue>
+              </PowSysBehavior:Frequency>
+            </PowSysBehavior:hasFrequency>
+          </j.0:PowerTransformer>
+        </mereology:isComposedOf>
+      </j.0:PowerConverter>
+    </mereology:isComposedOf>
+  </system:System>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#QLoss">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ReactivePowerLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#NominalOpT">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#NominalOperatingTemperature"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#TCoeffPMPP">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#TemperatureCoefficientOfPower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#WeakIrrLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#WeakIrradiationLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Pg">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#InvLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#InverterLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#SoCMin">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumStateOfCharge"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#QMax">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Qg">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#GeneratedReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Va">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#VoltageAngle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#GdBus">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ReactivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#BaseTempTesting">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BaseTestingTemperature"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:about="#v2"/>
+      <owl:NamedIndividual rdf:about="#v3"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#TempLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#TemperatureLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PanelL">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#PanelLength"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#BaseIrrTesting">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#BaseTestingIrradiance"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#ACCableLosses">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#CablingLosses"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#RatedEff">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysRealization.owl#RatedEfficiency"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:NamedIndividual rdf:ID="a1">
+    <geometry:has_area rdf:resource="#v2"/>
+    <rdf:type rdf:resource="http://www.theworldavatar.com/ontology/ontocape/supporting_concepts/geometry/geometry.owl#Surface"/>
+  </owl:NamedIndividual>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMinGridMetered">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMaxGridMetered">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:about="#v2"/>
+      <owl:NamedIndividual rdf:about="#v4"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PdGen">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#ActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#AngleMax">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumVoltageAngle"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMinBattery">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MinimumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#Vm">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#VoltageMagnitude"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+  <owl:AllDifferent>
+    <owl:distinctMembers rdf:parseType="Collection">
+      <owl:NamedIndividual rdf:about="#v1"/>
+      <owl:NamedIndividual rdf:about="#v4"/>
+    </owl:distinctMembers>
+  </owl:AllDifferent>
+  <rdf:Description rdf:about="http://www.theworldavatar.com/ontology/ontopowsys/model/PowerSystemModel.owl#PMax">
+    <rdfs:subClassOf>
+      <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.theworldavatar.com/ontology/ontocape/model/mathematical_model.owl#correspondsToQuantity"/>
+        <owl:someValuesFrom rdf:resource="http://www.theworldavatar.com/ontology/ontopowsys/PowSysBehavior.owl#MaximumActivePower"/>
+      </owl:Restriction>
+    </rdfs:subClassOf>
+  </rdf:Description>
+</rdf:RDF>
+
+<!-- Created with TopBraid -->
