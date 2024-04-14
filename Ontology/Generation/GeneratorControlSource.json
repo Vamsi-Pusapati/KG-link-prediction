@@ -1,0 +1,42 @@
+{
+    "@id": "dtmi:digitaltwins:ngsi_ld:cim:energy:GeneratorControlSource;1",
+    "@type": "Interface",
+    "displayName": "GeneratorControlSource",
+    "comment": "The source of controls for a generating unit.",
+    "description": "Adapted from CIM and https://github.com/smart-data-models/dataModel.EnergyCIM/ data models.",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "generationControlValue",
+            "description": "The value of generationControl.",
+            "writable": true,
+            "schema": {
+                "@type": "Enum",
+                "valueSchema": "string",
+                "enumValues": [
+                    {
+                        "name": "unavailable",
+                        "displayName": "Not available",
+                        "enumValue": "unavailable"
+                    },
+                    {
+                        "name": "offAGC",
+                        "displayName": "Off of automatic generation control (AGC).",
+                        "enumValue": "offAGC"
+                    },
+                    {
+                        "name": "onAGC",
+                        "displayName": "On automatic generation control (AGC).",
+                        "enumValue": "onAGC"
+                    },
+                    {
+                        "name": "plantControl",
+                        "displayName": "Plant is controlling",
+                        "enumValue": "plantControl"
+                    }
+                ]
+            }
+        }
+    ],
+    "@context": "dtmi:dtdl:context;2"
+}

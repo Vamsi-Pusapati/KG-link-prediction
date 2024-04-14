@@ -1,0 +1,37 @@
+{
+    "@id": "dtmi:digitaltwins:ngsi_ld:cim:energy:HydroPlantStorageKind;1",
+    "@type": "Interface",
+    "displayName": "HydroPlantStorageKind",
+    "comment": "The type of hydro power plant.",
+    "description": "Adapted from CIM and https://github.com/smart-data-models/dataModel.EnergyCIM/ data models",
+    "contents": [
+        {
+            "@type": "Property",
+            "name": "StorageKind",
+            "description": "The type of hydro power plant.",
+            "writable": true,
+            "schema": {
+                "@type": "Enum",
+                "valueSchema": "string",
+                "enumValues": [
+                    {
+                        "name": "runOfRiver",
+                        "displayName": "runOfRiver",
+                        "enumValue": "runOfRiver"
+                    },
+                    {
+                        "name": "pumpedStorage",
+                        "displayName": "pumpedStorage",
+                        "enumValue": "pumpedStorage"
+                    },
+                    {
+                        "name": "storage",
+                        "displayName": "storage",
+                        "enumValue": "storage"
+                    }
+                ]
+            }
+        }
+    ],
+    "@context": "dtmi:dtdl:context;2"
+}
